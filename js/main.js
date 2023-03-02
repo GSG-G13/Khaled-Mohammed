@@ -20,7 +20,6 @@ taskSubmit.addEventListener("click", () => {
     createTask(taskNameValue, taskDateValue, taskDetailsValue);
   }
 });
-
 function createTask(taskName, taskDate, taskDetails) {
   let task = {
     id: Date.now(),
@@ -28,18 +27,25 @@ function createTask(taskName, taskDate, taskDetails) {
     date: taskDate,
     details: taskDetails,
   };
-  tasks.push(task);
+  if (localStorage.getItem("toDo")) {
+    tasks = JSON.parse(localStorage.getItem("toDo"));
+    console.log(tasks, "out");
+    tasks.push(task);
+  } else {
+    tasks.push(task);
+  }
   localStorage.setItem("toDo", JSON.stringify(tasks));
   tasksDiv.innerHTML = "";
   read();
 }
 function read() {
   let value = JSON.parse(localStorage.getItem("toDo"));
-  value.forEach((el) => {
-    createTaskContent(el);
-  });
+  if (localStorage.getItem("toDo")) {
+    value.forEach((el) => {
+      createTaskContent(el);
+    });
+  }
 }
-read();
 function createTaskContent(ob) {
   let createMainDiv = document.createElement("div");
   let titleDate = document.createElement("div");
@@ -51,6 +57,7 @@ function createTaskContent(ob) {
   remove.textContent = "x";
   remove.addEventListener("click", () => {
     deleteTask(ob.id);
+    remove.parentNode.remove();
   });
   let line = document.createElement("hr");
   let taskDetails = document.createElement("h3");
@@ -72,7 +79,8 @@ function createTaskContent(ob) {
   taskDetails.style.cssText = "width: 100%; margin-top:25px";
 }
 const deleteTask = (id) => {
-  console.log("OK");
   tasks = tasks.filter((task) => task.id !== id);
-  read();
+  localStorage.setItem("toDo", JSON.stringify(tasks));
 };
+
+read();
