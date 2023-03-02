@@ -1,14 +1,22 @@
-@media (min-width: 576px) {
-}
-
-@media (min-width: 768px) {
-}
-
-@media (min-width: 992px) {
-}
-
-@media (min-width: 1200px) {
-}
-
-@media (min-width: 1400px) {
+@media (max-width: 576px) {
+  .Todo-App {
+    padding: 30px 20px;
+  }
+  .todo-form {
+    width: 100%;
+    background-color: #f6fafb;
+  }
+  .name-date {
+    flex-direction: column;
+  }
+  .name-date input {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .name-date input:last-child {
+    margin-bottom: 0;
+  }
+  .tasks {
+    width: 100%;
+  }
 }
