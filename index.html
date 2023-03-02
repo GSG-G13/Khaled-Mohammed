@@ -6,9 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/media.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>To-Do App</title>
   </head>
   <body>
+    <div class="Todo-App">
+      <h1 class="app-title">Todo App</h1>
+      <div class="todo-form">
+        <div class="name-date">
+          <input type="text" class="task-name" placeholder="Task Name" />
+          <input type="text" class="tast-date" placeholder="Task Date" />
+        </div>
+        <textarea class="task-details" placeholder="Task Details"></textarea>
+        <button class="task-submit">Submit</button>
+      </div>
+      <section class="tasks"></section>
+    </div>
     <script src="js/main.js"></script>
   </body>
 </html>
