@@ -9,7 +9,8 @@ body {
 .Todo-App {
   width: 100%;
   min-height: 100vh;
-  background-color: #f0d7cc;
+  background-image: url("https://d1rluokkqqu56n.cloudfront.net/wpapp/uploads/2020/12/19100145/to-do-list-1731x1080.jpeg.webp") ;
+  
   padding: 30px 20px;
 }
 
@@ -17,6 +18,7 @@ body {
   text-align: center;
   margin-bottom: 20px;
   letter-spacing: 2px;
+  
 }
 
 .todo-form {
@@ -25,6 +27,7 @@ body {
   padding: 30px;
   border-radius: 10px;
   background-color: #f6fafb;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.449) ;
 }
 
 .name-date {
